@@ -11,6 +11,7 @@ using namespace std;
 
 Point2 pt_obj;
 Turtle turtle;
+akjdfkjfkljhfjk
 
 void initializewindow()
 {
