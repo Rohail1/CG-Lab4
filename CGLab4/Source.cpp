@@ -85,12 +85,14 @@ void drawHook()
 	turtle.turn(90);
 	turtle.forward(L, 1);
 	turtle.turn(90);
+	// 3rd 
 	turtle.forward(3 * L, 1);
 	turtle.turn(90);
 	turtle.forward(L, 1);
 	turtle.turn(90);
 	turtle.forward(L, 1);
 	turtle.turn(90);
+	//4th
 	turtle.forward(3 * L, 1);
 	turtle.turn(90);
 	turtle.forward(L, 1);
@@ -101,6 +103,51 @@ void drawHook()
 	
 }
 
+void PolySpiralA(){
+
+	GLint length = 10;
+	for (GLint K = 0; K < 100; K++)
+	{
+		turtle.forward(length, 1);
+		turtle.turn(60);
+		length++;
+	}
+
+}
+void PolySpiralB(){
+
+	GLint length = 10;
+	for (GLint K = 0; K < 100; K++)
+	{
+		turtle.forward(length, 1);
+		turtle.turn(89.5);
+		length++;
+	}
+
+}
+void PolySpiralC(){
+
+	GLint length = 10;
+	for (GLint K = 0; K < 100; K++)
+	{
+		turtle.forward(length, 1);
+		turtle.turn(144);
+		length++;
+	}
+
+}
+void PolySpiralD(){
+
+	GLint length = 10;
+	for (GLint K = 0; K < 100; K++)
+	{
+		turtle.forward(length, 1);
+		turtle.turn(170);
+		length++;
+	}
+
+}
+
 void mydisplay()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -108,6 +155,10 @@ void mydisplay()
 	drawArc(point, 100, 0, 270);
 	ngon(15, 200, 200, 50, 17);
 	drawHook();
+	PolySpiralA();
+	PolySpiralB();
+	PolySpiralC();
+	PolySpiralD();
 	glFlush();
 
 }
