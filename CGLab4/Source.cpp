@@ -69,12 +69,45 @@ void ngon(int n, double cx,double cy,double radius, double rotAngle)
 
 }
 
+void drawHook()
+{
+	GLfloat L = 20;
+	turtle.forward(3 * L, 1);
+	turtle.turn(90);
+	turtle.forward(L, 1);
+	turtle.turn(90);
+	turtle.forward(L, 1);
+	turtle.turn(90); 
+	// 2nd on
+	turtle.forward(3 * L, 1);
+	turtle.turn(90);
+	turtle.forward(L, 1);
+	turtle.turn(90);
+	turtle.forward(L, 1);
+	turtle.turn(90);
+	turtle.forward(3 * L, 1);
+	turtle.turn(90);
+	turtle.forward(L, 1);
+	turtle.turn(90);
+	turtle.forward(L, 1);
+	turtle.turn(90);
+	turtle.forward(3 * L, 1);
+	turtle.turn(90);
+	turtle.forward(L, 1);
+	turtle.turn(90);
+	turtle.forward(L, 1);
+	turtle.turn(90);
+
+	
+}
+
 void mydisplay()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3ub(90, 178, 232);
 	drawArc(point, 100, 0, 270);
 	ngon(15, 200, 200, 50, 17);
+	drawHook();
 	glFlush();
 
 }
