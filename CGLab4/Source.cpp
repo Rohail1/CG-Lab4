@@ -13,6 +13,7 @@ Point2 point(100, 150);
 Turtle turtle(Point2(0, 0), 90);
 
 
+
 void initializewindow()
 {
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
@@ -33,7 +34,7 @@ void initGL()
 	glLineWidth(2.0);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluOrtho2D(0, 640, 0, 480);
+	gluOrtho2D(0, 100, 0, 100);
 	glViewport(0, 0, 639, 479);
 }
 
@@ -67,6 +68,27 @@ void ngon(int n, double cx,double cy,double radius, double rotAngle)
 		turtle.lineTo(Point2(radius*cos(angle) + cx, radius*sin(angle) + cy));
 	}
 
+}
+
+void rosette(int N, GLfloat radius)
+{
+	Point2 *pointlest = new Point2[2];
+	GLfloat theta = (2.0f*3.1415) / N;
+	for (int c = 0; c < N; c++)
+	{
+		pointlest[c].set(radius*sin(theta*c)+50, radius*cos(theta*c)+50);
+
+	}
+		for (int i = 0; i < N; i++)
+		{
+			for (int  j = 0; j < N; j++)
+			{
+				
+				turtle.moveTo(pointlest[i] );
+				turtle.lineTo(pointlest[j] );
+			}
+		}
+	
 }
 
 void drawHook()
@@ -151,14 +173,15 @@ void PolySpiralD(){
 void mydisplay()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3ub(90, 178, 232);
-	drawArc(point, 100, 0, 270);
+	glColor3ub(255, 0, 0);
+	rosette(5, 20);
+	/*drawArc(point, 100, 0, 270);
 	ngon(15, 200, 200, 50, 17);
 	drawHook();
 	PolySpiralA();
 	PolySpiralB();
 	PolySpiralC();
-	PolySpiralD();
+	PolySpiralD();*/
 	glFlush();
 
 }
